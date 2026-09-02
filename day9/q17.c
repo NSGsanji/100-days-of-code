@@ -18,30 +18,24 @@ Roots are complex
 
 */
 #include <stdio.h>
-#include <math.h>
 
 int main() {
-    float a, b, c, d, root1, root2, realPart, imagPart;
+    int a, b, c;
+    int d;
 
     printf("Enter coefficients a, b and c: ");
-    scanf("%f %f %f", &a, &b, &c);
+    scanf("%d %d %d", &a, &b, &c);
 
-    d = b * b - 4 * a * c;   // Discriminant
+    d = b * b - 4 * a * c;
 
-    if (d > 0) {
-        root1 = (-b + sqrt(d)) / (2 * a);
-        root2 = (-b - sqrt(d)) / (2 * a);
-        printf("Roots are real and different: %.2f, %.2f\n", root1, root2);
-    }
-    else if (d == 0) {
-        root1 = -b / (2 * a);
-        printf("Roots are real and same: %.2f\n", root1);
-    }
-    else {
-        realPart = -b / (2 * a);
-        imagPart = sqrt(-d) / (2 * a);
-        printf("Roots are complex\n");
-        }
+    if (d > 0)
+        printf("Roots are real and different");
+    else if (d == 0)
+        printf("Roots are real and same");
+    else
+        printf("Roots are complex");
 
+    return 0;
+}
     return 0;
 }
